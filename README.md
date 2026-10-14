@@ -1,16 +1,27 @@
-# React + Vite
+# Club Nautico Valdivia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyecto pagina web del ramo "Desarrollo Fullstack II"
 
-Currently, two official plugins are available:
+## Estructura
+### Vista General
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| URL                  | Descripcion                                                                             |
+|----------------------|-----------------------------------------------------------------------------------------|
+| /index               | Pagina de entrada. Informacion / Historia del club, descripcion de muelles y servicios. |
+| /muelles             | Lista de todos los muelles con su costos asociados y dimensiones maximas                |
+| /almacenes           | Lista de todos los almacenes con sus costos asociados y dimensiones maximas             |
+| /servicios           | Lista de todos los servicios y sus costos asociados                                     |
+| /socios              | Imagenes de actividades y redireccionamiento a registro / inicio sesion                 |
+| /registro-socio      | Registro para nuevos socios                                                             |
+| /login-socio         | Inicio de sesion para socios existentes                                                 |
+| /login-administrador | Inicio de sesion para el administrador del Club                                         |
+### Vista Socio
 
-## React Compiler
+| URL               | Descripcion                                  |
+| ----------------- | -------------------------------------------- |
+| /arrendar-espacio | Arrendar muelle o almacen y uso de servicios |
+## Vista Administrador
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+| URL            | Descripcion                                           |
+| -------------- | ----------------------------------------------------- |
+| /vista-general | Lista de todos los muelles y almacenes y de su estado |
