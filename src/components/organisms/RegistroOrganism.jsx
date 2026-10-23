@@ -1,12 +1,14 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
+import { validarRegistro } from '../../scripts/Registro';
 import Formulario from '../molecules/Formulario';
 import Button from '../atoms/Button';
 import Text from '../atoms/Text';
 
 function RegistroOrganism() {
 
+  // Datos que se vaningresar
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
   const [contraseña, setContraseña] = useState("");
@@ -18,59 +20,14 @@ function RegistroOrganism() {
   const navigate = useNavigate();
 
   const guardarRegistro = () => {
+    const error = validarRegistro({
+      nombre, correo, contraseña, contraseñaRepetida,
+      telefono, direccion, velero
+    });
 
-    // Validacion para los cuadros vacios
-    if (
-      nombre.trim() === "" ||
-      correo.trim() === "" ||
-      contraseña.trim() === "" ||
-      contraseñaRepetida.trim() === "" ||
-      direccion.trim() === "" ||
-      velero.trim() === ""
-    ) {
-      alert("Es importante que rellenes todos los datos!");
-      return;
-    }
+    if (error) return alert(error);
 
-    // Validacion de nombre con regex
-    let expresionNombre = /^[A-Za-zÁÉÍÓÚáéíóúÑñ ]+$/;
-
-    if (!expresionNombre.test(nombre)) {
-      alert("El nombre no puede contener números ni caracteres especiales");
-      return;
-    }
-
-    // Validacion de correo con regex
-    let expresionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!expresionCorreo.test(correo)) {
-      alert("El correo electrónico no es válido");
-      return;
-    }
-
-    // Validacion de contraseña
-    if (contraseña.length < 10) {
-      alert("La contraseña debe contener 10 caracteres mínimo");
-      return;
-    }
-
-    // Validar que las contraseñas coincidan
-    if (contraseña !== contraseñaRepetida) {
-      alert("Las contraseñas no coinciden");
-      return;
-    }
-
-    // Validar direccion
-    let tieneNumero = /[0-9]/.test(direccion);
-    let tieneLetras = /[A-Za-zÁÉÍÓÚáéíóúÑñ]/.test(direccion);
-
-    if (!tieneLetras || !tieneNumero) {
-      alert("La dirección debe contener un nombre de calle y el número de casa o departamento");
-      return;
-    }
-
-    // Redirigir cuande pase las validaciones
-    navigate("/");
+    navigate("/inicio");
   };
 
   return (

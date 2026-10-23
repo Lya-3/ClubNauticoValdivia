@@ -4,11 +4,7 @@ import '../styles/Inicio.css';
 function Inicio() {
   return (
     <main className="fondo-login">
-      <InicioOrganism
-        titulo="INICIO DE SESIÓN"
-        boton="Iniciar como Admin"
-        enlace="/inicio-admin"
-      />
+      <InicioOrganism />
     </main>
   );
 }

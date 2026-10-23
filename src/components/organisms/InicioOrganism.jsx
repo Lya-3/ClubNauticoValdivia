@@ -1,40 +1,28 @@
 import { useState } from 'react';
-import { Container, Row, Col } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { Container, Row, Col } from 'react-bootstrap';
+import { validarInicio } from '../../scripts/Inicio';
 import Formulario from '../molecules/Formulario';
 import Button from '../atoms/Button';
 import Text from '../atoms/Text';
 
-function InicioOrganism({ titulo, boton, enlace, volver }) {
+function InicioOrganism({
+  titulo = "INICIAR SESIÓN",
+  boton = "Iniciar Sesión",
+  enlace = "/inicio-admin"
+}) {
 
+  // Datos que se van a ingresar
   const [correo, setCorreo] = useState("");
   const [contraseña, setContraseña] = useState("");
 
   const navigate = useNavigate();
 
   const iniciarSesion = () => {
+    const error = validarInicio(correo, contraseña);
 
-    // Validacion para los cuadros vacios
-    if (correo.trim() === "" || contraseña.trim() === "") {
-      alert("Debes ingresar todos los datos para iniciar sesión");
-      return;
-    }
+    if (error) return alert(error);
 
-    // Validacion del correo con regex
-    let expresionCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    if (!expresionCorreo.test(correo)) {
-      alert("El correo electrónico no es válido");
-      return;
-    }
-
-    // Validacion de contraseña
-    if (contraseña.length < 10) {
-      alert("La contraseña que estás utilizando debe contener 10 caracteres mínimo");
-      return;
-    }
-
-    // Redirigir cuando pasa las validaciones
     navigate("/arriendos");
   };
 
@@ -68,19 +56,17 @@ function InicioOrganism({ titulo, boton, enlace, volver }) {
       <Row>
         <Col>
           <Button onClick={iniciarSesion}>
-            Iniciar
-          </Button>
-
-          <Button href="/registro">
-            Registrarse
-          </Button>
-        </Col>
-      </Row>
-
-      <Row>
-        <Col>
-          <Button href={enlace}>
             {boton}
+          </Button>
+
+          <Button onClick={() => navigate(enlace)}>
+            {enlace === "/inicio"
+              ? "Cambiar a Cliente"
+              : "Cambiar a Admin"}
+          </Button>
+
+          <Button onClick={() => navigate("/registro")}>
+            Registrarse
           </Button>
         </Col>
       </Row>
