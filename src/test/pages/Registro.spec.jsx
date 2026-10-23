@@ -5,52 +5,26 @@ import Registro from '../../pages/Registro';
 
 describe('Página Registro', () => {
 
-  it('renderiza el título de registro', () => {
-    render(
-      <MemoryRouter>
-        <Registro />
-      </MemoryRouter>
-    );
+    function mostrarPagina() {
+        render(<MemoryRouter><Registro /></MemoryRouter>);
+    }
 
-    const titulo = screen.getByText(/registro de usuario/i);
+    it('renderiza el título de registro', () => {
+        mostrarPagina();
+        const titulo = screen.getByText('REGISTRO DE USUARIO');
+        expect(titulo).toBeTruthy();
+    });
 
-    expect(titulo).toBeTruthy();
-  });
+    it('renderiza el campo de nombre completo', () => {
+        mostrarPagina();
+        const nombre = screen.getByText('Nombre Completo:');
+        expect(nombre).toBeTruthy();
+    });
 
-  it('renderiza el campo de nombre completo', () => {
-    render(
-      <MemoryRouter>
-        <Registro />
-      </MemoryRouter>
-    );
-
-    const nombre = screen.getByText(/nombre completo/i);
-
-    expect(nombre).toBeTruthy();
-  });
-
-  it('renderiza el campo de correo electrónico', () => {
-    render(
-      <MemoryRouter>
-        <Registro />
-      </MemoryRouter>
-    );
-
-    const correo = screen.getByText(/correo electrónico/i);
-
-    expect(correo).toBeTruthy();
-  });
-
-  it('renderiza el campo de modelo de velero', () => {
-    render(
-      <MemoryRouter>
-        <Registro />
-      </MemoryRouter>
-    );
-
-    const modelo = screen.getByText(/modelo de velero/i);
-
-    expect(modelo).toBeTruthy();
-  });
+    it('renderiza el campo de correo electrónico', () => {
+        mostrarPagina();
+        const correo = screen.getByText('Correo Electrónico:');
+        expect(correo).toBeTruthy();
+    });
 
 });

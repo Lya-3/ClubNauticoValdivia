@@ -5,26 +5,26 @@ import InicioAdmin from '../../pages/InicioAdmin';
 
 describe('Página InicioAdmin', () => {
 
-    it('renderiza correctamente la página', () => {
-        const { container } = render(
-            <MemoryRouter>
-                <InicioAdmin />
-            </MemoryRouter>
-    );
+    function mostrarPagina() {
+        render(<MemoryRouter><InicioAdmin /></MemoryRouter>);
+    }
 
-    expect(container.firstChild).toBeTruthy();
-  });
+    it('renderiza el título de administrador', () => {
+        mostrarPagina();
+        const titulo = screen.getByText('INICIAR SESIÓN COMO ADMINISTRADOR');
+        expect(titulo).toBeTruthy();
+    });
 
-    it('renderiza el enlace de administrador', () => {
-        render(
-            <MemoryRouter>
-                <Inicio />
-            </MemoryRouter>
-        );
+    it('renderiza el campo de correo electrónico', () => {
+        mostrarPagina();
+        const correo = screen.getByText('Correo Electrónico:');
+        expect(correo).toBeTruthy();
+    });
 
-        const enlace = screen.getByText(/iniciar como admin/i);
-
-        expect(enlace).toBeTruthy();
+    it('renderiza el botón Cambiar a Cliente', () => {
+        mostrarPagina();
+        const boton = screen.getByText('Cambiar a Cliente');
+        expect(boton).toBeTruthy();
     });
 
 });

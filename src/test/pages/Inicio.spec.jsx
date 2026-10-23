@@ -5,40 +5,26 @@ import Inicio from '../../pages/Inicio';
 
 describe('Página Inicio', () => {
 
-  it('renderiza la página de inicio de sesión', () => {
-    render(
-      <MemoryRouter>
-        <Inicio />
-      </MemoryRouter>
-    );
+    function mostrarPagina() {
+        render(<MemoryRouter><Inicio /></MemoryRouter>);
+    }
 
-    const titulo = screen.getByText(/iniciar sesión/i);
+    it('muestra el título', () => {
+        mostrarPagina();
+        const titulo = screen.getByText('INICIAR SESIÓN');
+        expect(titulo).toBeTruthy();
+    });
 
-    expect(titulo).toBeTruthy();
-  });
+    it('muestra el correo electrónico', () => {
+        mostrarPagina();
+        const correo = screen.getByText('Correo Electrónico:');
+        expect(correo).toBeTruthy();
+    });
 
-  it('renderiza el campo de correo electrónico', () => {
-    render(
-      <MemoryRouter>
-        <Inicio />
-      </MemoryRouter>
-    );
-
-    const correo = screen.getByText(/correo electrónico/i);
-
-    expect(correo).toBeTruthy();
-  });
-
-  it('renderiza el campo de contraseña', () => {
-    render(
-      <MemoryRouter>
-        <Inicio />
-      </MemoryRouter>
-    );
-
-    const contraseña = screen.getByText(/contraseña/i);
-
-    expect(contraseña).toBeTruthy();
-  });
+    it('muestra la contraseña', () => {
+        mostrarPagina();
+        const contraseña = screen.getByText('Contraseña:');
+        expect(contraseña).toBeTruthy();
+    });
 
 });
