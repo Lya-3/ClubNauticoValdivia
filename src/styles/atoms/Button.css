@@ -19,3 +19,21 @@
 a.boton {
   text-decoration: none;
 }
+
+.boton.botonHeader {
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 10px 25px;
+}
+
+.boton.botonHeader:hover {
+  background-color: white;
+  color: #212529;
+  transform: scale(1.05);
+}
+
+a.botonHeader {
+  text-decoration: none;
+}

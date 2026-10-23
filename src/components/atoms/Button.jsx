@@ -1,9 +1,9 @@
 import { Button as BootstrapButton } from 'react-bootstrap';
 import '../../styles/atoms/Button.css';
 
-function Button({ children, ...props }) {
+function Button({ children, className = "", ...props }) {
   return (
-    <BootstrapButton className="boton" {...props}>
+    <BootstrapButton className={`boton ${className}`} {...props}>
       {children}
     </BootstrapButton>
   );
