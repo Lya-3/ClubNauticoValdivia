@@ -8,7 +8,7 @@ import Inicio from './pages/Inicio.jsx'
 import InicioAdmin from './pages/InicioAdmin.jsx'
 import Registro from './pages/Registro.jsx'
 import Servicios from './pages/Servicios.jsx'
-
+import Arriendos from './pages/Arriendos.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +22,7 @@ function App() {
         <Route path = "/inicio-admin" element={<InicioAdmin />}/>
         <Route path = "/registro" element={<Registro />}/>
         <Route path = "/servicios" element={<Servicios />}/>
+        <Route path = "/arriendos" element={<Arriendos />}/>
       </Routes>
       <Footer/>
     </>
