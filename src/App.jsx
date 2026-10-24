@@ -7,6 +7,7 @@ import Home from './pages/Home.jsx'
 import Inicio from './pages/Inicio.jsx'
 import InicioAdmin from './pages/InicioAdmin.jsx'
 import Registro from './pages/Registro.jsx'
+import Servicios from './pages/Servicios.jsx'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path = "/inicio" element={<Inicio />}/>
         <Route path = "/inicio-admin" element={<InicioAdmin />}/>
         <Route path = "/registro" element={<Registro />}/>
+        <Route path = "/servicios" element={<Servicios />}/>
       </Routes>
       <Footer/>
     </>
