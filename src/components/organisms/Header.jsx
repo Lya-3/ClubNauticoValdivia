@@ -9,7 +9,7 @@ function Header() {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">Inicio</Nav.Link>
-                        <Nav.Link href="/">Muelle</Nav.Link>
+                        <Nav.Link href="/muelle">Muelle</Nav.Link>
                         <Nav.Link href="/">Almacenes</Nav.Link>
                         <Nav.Link href="/">Servicios</Nav.Link>
                         <Nav.Link href="/">Socios</Nav.Link>
