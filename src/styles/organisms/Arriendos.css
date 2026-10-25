@@ -40,6 +40,7 @@
 .servicio_imagen {
     width: clamp(300px, 35vw, 390px);
     height: auto;
+    cursor: pointer;
 }
 
 

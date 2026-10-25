@@ -1,11 +1,11 @@
+import Tarjeta from '../atoms/Tarjeta';
 import Text from '../atoms/Text';
 
-function ArriendoEspacio({ img, title, tamanos = [], tiempos = [], tamano_id, tiempo_id, costo_id}) {
+function ArriendoEspacio({ img, title, tamanos = [], tiempos = [], tamano_id, tiempo_id, costo_id, children}) {
     return (
         <div className="arriendos">
             <Text variant="h3">{title}</Text>
-            <img className="servicio_imagen" src={img} alt={title} />
-
+            <Tarjeta img={img} alt={title} classImg='servicio_imagen'>{children}</Tarjeta>
             <div className="datos_arriendo">
                 <Text>Tamaño: </Text>
                 <select id={tamano_id}>

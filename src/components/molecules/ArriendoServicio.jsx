@@ -1,10 +1,10 @@
 import Text from '../atoms/Text';
-
-function ArriendoServicio({ img, title, cost_text, tiempo_id, costo_id}) {
+import Tarjeta from '../atoms/Tarjeta';
+function ArriendoServicio({ img, title, cost_text, tiempo_id, costo_id, children}) {
     return (
 			<div className="arriendos">
 				<h3>{title}</h3>
-				<img className="servicio_imagen" src={img}/>
+				<Tarjeta img={img} alt={title} classImg='servicio_imagen'>{children}</Tarjeta>
 				<p>{cost_text}</p>
 				<input id={tiempo_id}></input>
 

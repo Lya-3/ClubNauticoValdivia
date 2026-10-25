@@ -22,6 +22,7 @@ function Arriendos() {
             tamano_id: 'tamano_muelle',
             tiempo_id: 'muelle_tipo_tiempo',
             costo_id: 'costo_muelle',
+            description: 'Estaciona tu embarcacion y accede a las maravillas que ofrece Valdivia'
         },
         {
             tipo: 'espacio',
@@ -40,6 +41,7 @@ function Arriendos() {
             tamano_id: 'tamano_almacen',
             tiempo_id: 'almacen_tiempo',
             costo_id: 'costo_almacen',
+            description: "Repara tu embarcacion con tranquilidad en nuestro deposito de embarcaciones."
         }
     ];
 
@@ -50,7 +52,8 @@ function Arriendos() {
             title: 'Pistola de Agua',
             cost_text: "Introduzca el numero de dias: ",
             tiempo_id: 'estacionamiento_tiempo',
-            costo_id: 'costo_estacionamiento'
+            costo_id: 'costo_estacionamiento',
+            description: "Estaciona de manera segura tu vehiculo mientras exploras los mares"
         },
         {
             tipo: 'servicio',
@@ -58,7 +61,8 @@ function Arriendos() {
             title: 'Pistola de Agua',
             cost_text: "Introduzca el numero de horas: ",
             tiempo_id: 'pistola_de_agua_tiempo',
-            costo_id: 'costo_pistola_de_agua'
+            costo_id: 'costo_pistola_de_agua',
+            description: "Herramienta versatil para limpiar la cubierta o la quilla de tu embarcacion"
         },
     ];
 

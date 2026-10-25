@@ -1,3 +1,4 @@
+import TarjetaMenu from "../atoms/TarjetaMenu";
 import ArriendoEspacio from "../molecules/ArriendoEspacio";
 import ArriendoServicio from "../molecules/ArriendoServicio";
 
@@ -16,7 +17,13 @@ function ArriendosContainer({ title, lista_arriendos = [] }) {
                                     title={item.title}
                                     tamanos={item.tamanos}
                                     tiempos={item.tiempos}
-                                />
+                                >
+                                    <TarjetaMenu
+                                        title={item.title}
+                                        img={item.img}
+                                        description={item.description}
+                                    />
+                                </ArriendoEspacio>
                             );
                         case 'servicio':
                             return (
@@ -25,7 +32,13 @@ function ArriendosContainer({ title, lista_arriendos = [] }) {
                                     img={item.img} 
                                     title={item.title} 
                                     cost_text={item.cost_text}
-                                />
+                                >
+                                    <TarjetaMenu
+                                        title={item.title}
+                                        img={item.img}
+                                        description={item.description}
+                                    />
+                                </ArriendoServicio>
                             );
                         default:
                             return null;
