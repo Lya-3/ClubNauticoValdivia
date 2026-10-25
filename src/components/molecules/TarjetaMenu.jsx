@@ -1,4 +1,4 @@
-import Text from "./Text";
+import Text from "../atoms/Text";
 
 function TarjetaMenu({img, title, description}) {
     return (

@@ -1,4 +1,4 @@
-import TarjetaMenu from "../atoms/TarjetaMenu";
+import TarjetaMenu from "../molecules/TarjetaMenu";
 import ArriendoEspacio from "../molecules/ArriendoEspacio";
 import ArriendoServicio from "../molecules/ArriendoServicio";
 
