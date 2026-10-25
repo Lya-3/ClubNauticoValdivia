@@ -5,7 +5,7 @@ function Arriendos() {
     const arriendos_espacios_valdivia = [
         {
             tipo: 'espacio',
-            img: 'nya',
+            img: '/imagenes/marina.webp',
             title: 'Muelles',
             tamanos: [
                 {id: 'muelle_8', text: "8 M | 26 FT"},
@@ -18,11 +18,14 @@ function Arriendos() {
                 {id: 'm_dias', text: 'Dias'},
                 {id: 'm_semanas', text: 'Semanas'},
                 {id: 'm_meses', text: 'Meses'},
-            ]
+            ],
+            tamano_id: 'tamano_muelle',
+            tiempo_id: 'muelle_tipo_tiempo',
+            costo_id: 'costo_muelle',
         },
         {
             tipo: 'espacio',
-            img: 'nya',
+            img: '/imagenes/houl.webp',
             title: 'Almacenes',
             tamanos: [
                 {id: 'almacen_8', text: "8 M | 26 FT"},
@@ -33,7 +36,10 @@ function Arriendos() {
             ],
             tiempos: [
                 {id: 'm_meses', text: 'Meses'},
-            ]
+            ],
+            tamano_id: 'tamano_almacen',
+            tiempo_id: 'almacen_tiempo',
+            costo_id: 'costo_almacen',
         }
     ];
 
@@ -43,12 +49,16 @@ function Arriendos() {
             img: '/imagenes/estacionamientos.jpg',
             title: 'Pistola de Agua',
             cost_text: "Introduzca el numero de dias: ",
+            tiempo_id: 'estacionamiento_tiempo',
+            costo_id: 'costo_estacionamiento'
         },
         {
             tipo: 'servicio',
             img: '/imagenes/pistola_de_agua.webp',
             title: 'Pistola de Agua',
             cost_text: "Introduzca el numero de horas: ",
+            tiempo_id: 'pistola_de_agua_tiempo',
+            costo_id: 'costo_pistola_de_agua'
         },
     ];
 
