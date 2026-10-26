@@ -3,7 +3,7 @@ import EspacioContainer from "../components/organisms/EspacioContainer.jsx";
 import "/src/styles/VistaMarina.css"; 
 
 function VistaMarina() {
-    const muelles = [
+    const [muelles, setMuelles] = useState([
         {
             espacio_id: 'A1',
             cliente: 'N/A',
@@ -129,9 +129,9 @@ function VistaMarina() {
             cliente: 'N/A',
             embarcacion: '-',
         }
-    ];
+    ]);
 
-    const almacenes = [
+    const [almacenes, setAlmacenes] = useState([
         {
             espacio_id: 'S0',
             cliente: 'N/A',
@@ -237,7 +237,7 @@ function VistaMarina() {
             cliente: 'N/A',
             embarcacion: '-',
         }
-    ];
+    ]);
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [actionType, setActionType] = useState('add'); 
