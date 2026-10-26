@@ -51,7 +51,7 @@ export default function MuelleOrganism() {
             mensual: '$1.020.000',
             electricidad: true,
             imagen: '/imagenes/muelle 4.webp',
-            descripcion: 'Ubicación privilegeda con máxima capacidad de manga y sistemas de amarra reforzados.'
+            descripcion: 'Ubicación privilegiada con máxima capacidad de manga y sistemas de amarra reforzados.'
         },
         {
             id: 'E1-E3',
@@ -101,21 +101,21 @@ export default function MuelleOrganism() {
                     onHide={() => setMuelleSeleccionado(null)}
                     size="lg"
                     centered
-                    dialogClassName="modal-ancho-personalizado"
                 >
                     <Modal.Header closeButton>
                         <Modal.Title>{muelleseleccionado.nombre}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body style={{ padding: '1.5rem' }}>
-                        <div style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem', flexWrap: 'wrap' }}>
-                            <div style={{ flex: '1 1 280px', minWidth: '250px' }}>
+                    <Modal.Body style={{ padding: '1.5rem', width: '100%' }}>
+                        <div style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+                            <div style={{ flex: '1 1 250px', maxWidth: '300px', width: '100%' }}>
                                 <Image
                                     src={muelleseleccionado.imagen}
                                     alt={muelleseleccionado.nombre}
                                     style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: '12px' }}
                                 />
                             </div>
-                            <div style={{ flex: '1 1 300px' }}>
+
+                            <div style={{ flex: '2 1 300px' }}>
                                 <h5>Descripción y Características</h5>
                                 <p style={{ color: '#64748b', fontSize: '0.95rem' }}>{muelleseleccionado.descripcion}</p>
 
