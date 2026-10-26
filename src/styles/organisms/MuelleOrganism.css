@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap);
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
 .muelle-container {
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
@@ -93,23 +93,44 @@
 }
 
 .modal-dialog {
-    max-width: 800px !important;
-    width: 90% !important;
+    max-width: 850px !important;
+    width: 92% !important;
+    margin: 1.75rem auto !important;
 }
 
 .modal-content {
     border-radius: 16px !important;
     border: none !important;
-    overflow: hidden;
+    overflow: hidden !important;
 }
 
 .modal-body {
     padding: 1.75rem !important;
 }
 
+.modal-body .row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    gap: 1.5rem !important;
+}
+
+.modal-body .row > div:first-child {
+    flex: 0 0 40% !important;
+    max-width: 40% !important;
+    width: 40% !important;
+}
+
+.modal-body .row > div:last-child {
+    flex: 0 0 60% !important;
+    max-width: 60% !important;
+    width: 60% !important;
+}
+
 .modal-body img {
     width: 100% !important;
-    height: 260px !important;
+    height: 250px !important;
+    max-height: 250px !important;
     object-fit: cover !important;
     border-radius: 12px !important;
 }
