@@ -12,6 +12,7 @@ import Almacenamiento from './pages/Almacenamiento.jsx'
 import Servicios from './pages/Servicios.jsx'
 import Arriendos from './pages/Arriendos.jsx'
 import Carrito from './pages/Carrito.jsx'
+import VistaMuelles from './pages/VistaMarina.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +30,7 @@ function App() {
         <Route path = "/servicios" element={<Servicios />}/>
         <Route path = "/arriendos" element={<Arriendos />}/>
         <Route path = "/carrito" element={<Carrito />}/>
+        <Route path = "/vista-marina" element={<VistaMuelles/>}/>
       </Routes>
       <Footer/>
     </>

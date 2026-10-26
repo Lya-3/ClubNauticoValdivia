@@ -15,3 +15,4 @@ Proyecto pagina web del ramo "Desarrollo Fullstack II"
 | /inicio              | Inicio de sesion para socios existentes                                                 |
 | /registro            | Registro para nuevos socios                                                             |
 | /inicio-admin        | Inicio de sesion para administradores                                                   |
+| /vista-marina        | Vista general del uso de los espacios de la marina                                      |
