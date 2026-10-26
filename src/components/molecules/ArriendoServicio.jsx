@@ -1,5 +1,6 @@
 import Text from '../atoms/Text';
 import Tarjeta from '../atoms/Tarjeta';
+
 function ArriendoServicio({ img, title, cost_text, tiempo_id, costo_id, children}) {
     return (
 			<div className="arriendos">
