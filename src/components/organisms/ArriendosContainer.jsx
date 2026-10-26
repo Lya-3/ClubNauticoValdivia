@@ -13,11 +13,12 @@ function ArriendosContainer({ title, lista_arriendos = [] }) {
                             return (
                                 <ArriendoEspacio 
                                     key={index}
+                                    itemId={item.id}
                                     img={item.img} 
                                     title={item.title}
                                     tamanos={item.tamanos}
                                     tiempos={item.tiempos}
-                                >
+                                    >
                                     <TarjetaMenu
                                         title={item.title}
                                         img={item.img}
@@ -29,9 +30,11 @@ function ArriendosContainer({ title, lista_arriendos = [] }) {
                             return (
                                 <ArriendoServicio 
                                     key={index}
+                                    itemId={item.id}
                                     img={item.img} 
                                     title={item.title} 
                                     cost_text={item.cost_text}
+                                    amount_type={item.amount_type}
                                 >
                                     <TarjetaMenu
                                         title={item.title}

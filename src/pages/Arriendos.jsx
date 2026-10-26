@@ -4,6 +4,7 @@ import "../styles/organisms/Arriendos.css";
 function Arriendos() {
     const arriendos_espacios_valdivia = [
         {
+            id: 'muelle',
             tipo: 'espacio',
             img: '/imagenes/marina.webp',
             title: 'Muelles',
@@ -19,12 +20,10 @@ function Arriendos() {
                 {id: 'm_semanas', text: 'Semanas'},
                 {id: 'm_meses', text: 'Meses'},
             ],
-            tamano_id: 'tamano_muelle',
-            tiempo_id: 'muelle_tipo_tiempo',
-            costo_id: 'costo_muelle',
             description: 'Estaciona tu embarcacion y accede a las maravillas que ofrece Valdivia'
         },
         {
+            id: 'almacen',
             tipo: 'espacio',
             img: '/imagenes/houl.webp',
             title: 'Almacenes',
@@ -38,47 +37,48 @@ function Arriendos() {
             tiempos: [
                 {id: 'm_meses', text: 'Meses'},
             ],
-            tamano_id: 'tamano_almacen',
-            tiempo_id: 'almacen_tiempo',
-            costo_id: 'costo_almacen',
             description: "Repara tu embarcacion con tranquilidad en nuestro deposito de embarcaciones."
         }
     ];
 
     const arriendos_servicios_valdivia = [
         {
+            id: 'estacionamiento',
             tipo: 'servicio',
             img: '/imagenes/estacionamientos.jpg',
-            title: 'Pistola de Agua',
+            title: 'Estacionamiento',
             cost_text: "Introduzca el numero de dias: ",
-            tiempo_id: 'estacionamiento_tiempo',
-            costo_id: 'costo_estacionamiento',
+            amount_type: "Por dia",
             description: "Estaciona de manera segura tu vehiculo mientras exploras los mares"
         },
         {
+            id: 'pistola_agua',
             tipo: 'servicio',
             img: '/imagenes/pistola_de_agua.webp',
             title: 'Pistola de Agua',
             cost_text: "Introduzca el numero de horas: ",
-            tiempo_id: 'pistola_de_agua_tiempo',
-            costo_id: 'costo_pistola_de_agua',
+            amount_type: "Por hora",
             description: "Herramienta versatil para limpiar la cubierta o la quilla de tu embarcacion"
         },
     ];
 
     return (
-        <>
-            <div className="arriendo_body">            
-                <ArriendosContainer
-                    title="Espacios"
-                    lista_arriendos={arriendos_espacios_valdivia}
-                />
-                <ArriendosContainer
-                    title="Servicios"
-                    lista_arriendos={arriendos_servicios_valdivia}
-                />
-            </div>
-        </>
+        <div className="arriendo_body">            
+            <button 
+                className="boton_carrito"
+                onClick={() => window.location.href = '/carrito'}>
+                Ir al Carrito
+            </button>
+
+            <ArriendosContainer
+                title="Espacios"
+                lista_arriendos={arriendos_espacios_valdivia}
+            />
+            <ArriendosContainer
+                title="Servicios"
+                lista_arriendos={arriendos_servicios_valdivia}
+            />
+        </div>
     );
 }
 

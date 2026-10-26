@@ -43,6 +43,13 @@
     cursor: pointer;
 }
 
+.boton_carrito {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 1000;
+    padding: 15px 20px;
+}
 
 @media (max-width: 600px) {
     .arriendos_container {
