@@ -1,13 +1,10 @@
-import { Container } from 'react-bootstrap'
+import React from "react";
+import HomeOrganism from "../components/organisms/HomeOrganism";
 
-function Home() {
+export default function Home() {
     return (
-        <Container className="my-5">
-            <h1>Página de Inicio</h1>
-            <p>Bienvenidos a nuestro sitio web.</p>
-        </Container>
- );
+        <main>
+            <HomeOrganism />
+        </main>
+    );
 }
-
-
-export default Home;
