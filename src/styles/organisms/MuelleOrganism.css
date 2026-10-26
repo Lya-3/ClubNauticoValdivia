@@ -8,12 +8,12 @@
 .muelle-header-title{
     font-weight: 700;
     letter-spacing: -0.02em;
-    color: #0f172a
+    color: #0f172a;
 }
 
 .muelle-header-subtitle {
     color: #64748b;
-    font-size: 1.rem;
+    font-size: 1rem;
     font-weight: 400;
     max-width: 600px;
     margin: 0 auto;
@@ -25,7 +25,7 @@
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s cubic-bazier(0.16, 1, 0.3, 1);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -71,7 +71,7 @@
     gap: 0.4rem;
 }
 
-.tajeta-muelle-precio {
+.tarjeta-muelle-precio {
     font-size: 1rem;
     font-weight: 600;
     color: #2563eb;
@@ -80,7 +80,7 @@
     border-radius: 8px;
     display: inline-block;
     width: fit-content;
-    margin-top: 05.rem;
+    margin-top: 0.5rem;
     margin-bottom: 1.25rem;
 }
 
@@ -90,4 +90,41 @@
     font-weight: 600;
     padding: 0.6rem 1.2rem;
     transition: all 0.2s ease;
+}
+
+.modal-dialog {
+    max-width: 700px !important;
+}
+
+.modal-content {
+    border-radius: 16px !important;
+    border: none !important;
+    overflow: hidden;
+}
+
+.modal-body {
+    padding: 1.5rem !important;
+}
+
+.modal-imagen-container{
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f8fafc;
+}
+
+.modal-imagen-container img {
+    width: 100%;
+    height: 100%;
+    max-height: 280px;
+    object-fit: cover;
+}
+
+.modal-tarifas-box {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
 }
