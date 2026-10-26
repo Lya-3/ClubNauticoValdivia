@@ -51,7 +51,7 @@ export default function MuelleOrganism() {
             mensual: '$1.020.000',
             electricidad: true,
             imagen: '/imagenes/muelle 4.webp',
-            descripcion: 'Ubicación privilegiada con máxima capacidad de manga y sistemas de amarra reforzados.'
+            descripcion: 'Ubicación privilegeda con máxima capacidad de manga y sistemas de amarra reforzados.'
         },
         {
             id: 'E1-E3',
@@ -68,7 +68,6 @@ export default function MuelleOrganism() {
 
     return (
         <Container className="my-5 muelle-container">
-            {/* Encabezado */}
             <div className="text-center mb-5">
                 <h1 className="muelle-header-title display-5">Nuestros Muelles</h1>
                 <p className="muelle-header-subtitle">
@@ -76,7 +75,6 @@ export default function MuelleOrganism() {
                 </p>
             </div>
 
-            {/* Grid de Tarjetas de Muelles */}
             <Row className="g-4">
                 {datosMuelle.map((item) => (
                     <Col key={item.id} xs={12} md={6} lg={4}>
@@ -97,29 +95,29 @@ export default function MuelleOrganism() {
                 ))}
             </Row>
 
-            {/* Modal con Detalle Explícito y Ampliado del Muelle */}
             {muelleseleccionado && (
                 <Modal
                     show={!!muelleseleccionado}
                     onHide={() => setMuelleSeleccionado(null)}
                     size="lg"
                     centered
+                    dialogClassName="modal-ancho-personalizado"
                 >
                     <Modal.Header closeButton>
                         <Modal.Title>{muelleseleccionado.nombre}</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
-                        <Row>
-                            <Col md={6}>
+                    <Modal.Body style={{ padding: '1.5rem' }}>
+                        <div style={{ display: 'flex', flexDirection: 'row', gap: '1.5rem', flexWrap: 'wrap' }}>
+                            <div style={{ flex: '1 1 280px', minWidth: '250px' }}>
                                 <Image
                                     src={muelleseleccionado.imagen}
                                     alt={muelleseleccionado.nombre}
-                                    className="img-fluid rounded mb-3"
+                                    style={{ width: '100%', height: '220px', objectFit: 'cover', borderRadius: '12px' }}
                                 />
-                            </Col>
-                            <Col md={6}>
+                            </div>
+                            <div style={{ flex: '1 1 300px' }}>
                                 <h5>Descripción y Características</h5>
-                                <p>{muelleseleccionado.descripcion}</p>
+                                <p style={{ color: '#64748b', fontSize: '0.95rem' }}>{muelleseleccionado.descripcion}</p>
 
                                 <ul className="list-unstyled">
                                     <li><strong>Dimensiones:</strong> {muelleseleccionado.medidas}</li>
@@ -129,14 +127,14 @@ export default function MuelleOrganism() {
                                     </li>
                                 </ul>
 
-                                <h5 className="mt-4">Desglose de Tarifas</h5>
-                                <div className="p-3 bg-light rounded">
+                                <h5 className="mt-3">Desglose de Tarifas</h5>
+                                <div className="p-3 bg-light rounded" style={{ border: '1px solid #e2e8f0' }}>
                                     <p className="mb-1"><strong>Tarifa Diaria:</strong> {muelleseleccionado.diario}</p>
                                     <p className="mb-1"><strong>Tarifa Semanal:</strong> {muelleseleccionado.semanal}</p>
                                     <p className="mb-0 text-success"><strong>Tarifa Mensual:</strong> {muelleseleccionado.mensual}</p>
                                 </div>
-                            </Col>
-                        </Row>
+                            </div>
+                        </div>
                     </Modal.Body>
                     <Modal.Footer>
                         <Button onClick={() => setMuelleSeleccionado(null)}>
