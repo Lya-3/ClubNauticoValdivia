@@ -93,12 +93,16 @@
 }
 
 .modal-dialog {
+    display: flex;
     max-width: 850px !important;
     width: 92% !important;
     margin: 1.75rem auto !important;
 }
 
 .modal-content {
+    display: flex;
+    flex-direction: column; 
+    width: 100% !important; 
     border-radius: 16px !important;
     border: none !important;
     overflow: hidden !important;
