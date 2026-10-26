@@ -1,0 +1,16 @@
+.debajo_carrito {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.debajo_carrito_vacio {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.vaciar_carrito {
+    padding: 10px 15px;
+}

@@ -1,0 +1,55 @@
+import TarjetaMenu from "../molecules/TarjetaMenu";
+import ArriendoEspacio from "../molecules/ArriendoEspacio";
+import ArriendoServicio from "../molecules/ArriendoServicio";
+
+function ArriendosContainer({ title, lista_arriendos = [] }) {
+    return (
+        <>
+            <h3>{title}</h3>
+            <div className="arriendos_container">
+                {lista_arriendos.map((item, index) => {
+                    switch (item.tipo) {
+                        case 'espacio':
+                            return (
+                                <ArriendoEspacio 
+                                    key={index}
+                                    itemId={item.id}
+                                    img={item.img} 
+                                    title={item.title}
+                                    tamanos={item.tamanos}
+                                    tiempos={item.tiempos}
+                                    >
+                                    <TarjetaMenu
+                                        title={item.title}
+                                        img={item.img}
+                                        description={item.description}
+                                    />
+                                </ArriendoEspacio>
+                            );
+                        case 'servicio':
+                            return (
+                                <ArriendoServicio 
+                                    key={index}
+                                    itemId={item.id}
+                                    img={item.img} 
+                                    title={item.title} 
+                                    cost_text={item.cost_text}
+                                    amount_type={item.amount_type}
+                                >
+                                    <TarjetaMenu
+                                        title={item.title}
+                                        img={item.img}
+                                        description={item.description}
+                                    />
+                                </ArriendoServicio>
+                            );
+                        default:
+                            return null;
+                    }
+                })}
+            </div>
+        </>
+    );
+}
+
+export default ArriendosContainer;

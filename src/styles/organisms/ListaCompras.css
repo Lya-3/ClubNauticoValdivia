@@ -1,0 +1,34 @@
+.compras {
+    display: flex;
+    justify-content: center; 
+    align-items: center;      
+    width: 100%; 
+    
+}
+
+#lista_compras {
+    width: 100%; 
+    max-width: 1200px;
+}
+
+#lista_compras table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+}
+
+#lista_compras th {
+    background-color: #123c56;
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+#lista_compras td {
+    padding: 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+#lista_compras tr:hover {
+    background-color: #eeeeee;
+}
