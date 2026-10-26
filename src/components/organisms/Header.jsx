@@ -17,8 +17,7 @@ function Header() {
                         <Nav.Link href="/">Inicio</Nav.Link>
                         <Nav.Link href="/muelle">Muelle</Nav.Link>
                         <Nav.Link href="/almacenamiento">Almacenes</Nav.Link>
-                        <Nav.Link href="/">Servicios</Nav.Link>
-                        <Nav.Link href="/">Socios</Nav.Link>
+                        <Nav.Link href="/servicios">Servicios</Nav.Link>
                     </Nav>
 
                     <Nav className="ms-auto">
