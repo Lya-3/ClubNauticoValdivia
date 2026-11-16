@@ -22,7 +22,7 @@ function InicioOrganism({
     const error = validarInicio(correo, contraseña);
 
     if (error) return alert(error);
-
+    console.log("Test");
     navigate("/arriendos");
   };
 

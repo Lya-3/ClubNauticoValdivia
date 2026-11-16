@@ -3,8 +3,8 @@ import Text from '../atoms/Text';
 import Tarjeta from '../atoms/Tarjeta';
 
 const PRECIOS_SERVICIOS = {
-    estacionamiento: 5000, 
-    pistola_agua: 1500     
+    estacionamiento: 5500, 
+    pistola_agua: 2500     
 };
 
 function ArriendoServicio({ itemId, img, title, cost_text, amount_type, children}) {
