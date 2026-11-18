@@ -27,7 +27,7 @@ public class Usuario {
     @Size(min = 2, max = 50, message = "El nombre debe contener entre 2 y 50 caracteres")
     @Column(unique = true, length = 50, nullable = false)
     private String nombre;
-
+    
     @NotNull(message = "El teléfono no puede ser nulo")
     private Integer telefono;
 
