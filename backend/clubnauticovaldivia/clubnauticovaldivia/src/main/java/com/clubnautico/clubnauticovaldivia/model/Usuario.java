@@ -28,11 +28,6 @@ public class Usuario {
     @Column(unique = true, length = 50, nullable = false)
     private String nombre;
 
-    @NotBlank(message = "La dirección no puede estar vacía")
-    @Size(min = 5, max = 100, message = "La dirección debe contener entre 5 y 100 caracteres")
-    @Column(unique = false, length = 100, nullable = false)
-    private String direccion;
-
     @NotNull(message = "El teléfono no puede ser nulo")
     private Integer telefono;
 
