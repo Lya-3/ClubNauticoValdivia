@@ -1,0 +1,10 @@
+com\clubnautico\clubnauticovaldivia\model\Almacen.class
+com\clubnautico\clubnauticovaldivia\model\Rol.class
+com\clubnautico\clubnauticovaldivia\model\Metodopago.class
+com\clubnautico\clubnauticovaldivia\model\TipoBoleta.class
+com\clubnautico\clubnauticovaldivia\model\Detalle.class
+com\clubnautico\clubnauticovaldivia\model\Muelle.class
+com\clubnautico\clubnauticovaldivia\model\Boleta.class
+com\clubnautico\clubnauticovaldivia\model\Usuario.class
+com\clubnautico\clubnauticovaldivia\ClubnauticovaldiviaApplication.class
+com\clubnautico\clubnauticovaldivia\model\Servicio.class
