@@ -1,8 +1,15 @@
 package com.clubnautico.clubnauticovaldivia.model;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -10,6 +17,7 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data 
 @AllArgsConstructor 
@@ -27,7 +35,7 @@ public class Usuario {
     @Size(min = 2, max = 50, message = "El nombre debe contener entre 2 y 50 caracteres")
     @Column(unique = true, length = 50, nullable = false)
     private String nombre;
-    
+
     @NotNull(message = "El teléfono no puede ser nulo")
     private Integer telefono;
 
@@ -40,4 +48,24 @@ public class Usuario {
     @Size(min = 5, max = 20, message = "La contraseña debe contener entre 5 y 20 caracteres")
     @Column(unique = false, length = 20, nullable = false)
     private String contraseña;
+
+    //Relaciones
+
+    @ManyToOne
+    @JoinColumn(name = "rol_id")
+    private Rol rol;
+
+    @ManyToOne
+    @JoinColumn(name = "tipo_usuario_id")
+    private TipoUsuario tipoUsuario;
+
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToMany(mappedBy = "usuario")
+    private List<Espacio> espacios;
+
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToMany(mappedBy = "usuario")
+    private List<Boleta> boletas;
 }

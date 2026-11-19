@@ -36,13 +36,18 @@ public class Detalle {
     @Column(nullable = false)
     private Integer subtotal;
 
-    @NotNull(message = "La boleta no puede ser nula")
+    //Relaciones
+
+    @NotNull(message = "La boleta es obligatoria")
     @ManyToOne
     @JoinColumn(name = "boleta_id", nullable = false)
     private Boleta boleta;
 
-    @NotNull(message = "El servicio no puede ser nulo")
     @ManyToOne
-    @JoinColumn(name = "servicio_id", nullable = false)
+    @JoinColumn(name = "servicio_id")
     private Servicio servicio;
+
+    @ManyToOne
+    @JoinColumn(name = "espacio_id")
+    private Espacio espacio;
 }

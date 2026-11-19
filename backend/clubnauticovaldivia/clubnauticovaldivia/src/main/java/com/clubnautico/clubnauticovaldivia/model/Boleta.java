@@ -1,6 +1,9 @@
 package com.clubnautico.clubnauticovaldivia.model;
 
 import java.time.LocalDate;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -9,12 +12,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data 
 @AllArgsConstructor 
@@ -35,18 +40,23 @@ public class Boleta {
     @Column(nullable = false)
     private Integer total;
 
-    @NotNull(message = "El usuario no puede ser nulo")
+    //Relaciones
+
+    @NotNull(message = "El usuario es obligatorio")
     @ManyToOne
     @JoinColumn(name = "usuario_rut", nullable = false)
     private Usuario usuario;
 
-    @NotNull(message = "El tipo de boleta no puede ser nulo")
     @ManyToOne
-    @JoinColumn(name = "tipo_boleta_id", nullable = false)
+    @JoinColumn(name = "metodo_pago_id")
+    private Metodopago metodoPago;
+
+    @ManyToOne
+    @JoinColumn(name = "tipo_boleta_id")
     private TipoBoleta tipoBoleta;
 
-    @NotNull(message = "El método de pago no puede ser nulo")
-    @ManyToOne
-    @JoinColumn(name = "metodo_pago_id", nullable = false)
-    private Metodopago metodoPago;
+    @JsonIgnore
+    @ToString.Exclude
+    @OneToMany(mappedBy = "boleta")
+    private List<Detalle> detalles;
 }
