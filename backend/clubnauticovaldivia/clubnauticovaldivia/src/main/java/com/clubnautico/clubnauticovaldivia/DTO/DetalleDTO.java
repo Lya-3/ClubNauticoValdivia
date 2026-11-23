@@ -8,4 +8,7 @@ public class DetalleDTO {
     private Integer id;
     private Integer cantidad;
     private Integer subtotal;
+
+    private Integer servicioId;
+    private Integer espacioId;
 }

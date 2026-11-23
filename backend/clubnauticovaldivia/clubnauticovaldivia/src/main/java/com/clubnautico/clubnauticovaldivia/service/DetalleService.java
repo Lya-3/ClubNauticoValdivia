@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.clubnautico.clubnauticovaldivia.DTO.DetalleDTO;
 import com.clubnautico.clubnauticovaldivia.model.Detalle;
 import com.clubnautico.clubnauticovaldivia.repository.DetalleRepository;
 
@@ -18,27 +19,45 @@ public class DetalleService {
         this.detalleRepository = detalleRepository;
     }
 
-    public List<Detalle> listar() {
-        return detalleRepository.findAll();
+    private DetalleDTO convertirDTO(Detalle detalle) {
+        DetalleDTO dto = new DetalleDTO();
+
+        dto.setId(detalle.getId());
+        dto.setCantidad(detalle.getCantidad());
+        dto.setSubtotal(detalle.getSubtotal());
+
+        if (detalle.getServicio() != null) {
+            dto.setServicioId(detalle.getServicio().getId());
+        }
+
+        if (detalle.getEspacio() != null) {
+            dto.setEspacioId(detalle.getEspacio().getId());
+        }
+
+        return dto;
     }
 
-    public Detalle buscarPorId(Integer id) {
-        return detalleRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "El detalle que buscas no ha sido encontrado"
-            ));
+    public List<DetalleDTO> listar() {
+        return detalleRepository.findAll()
+                .stream()
+                .map(this::convertirDTO)
+                .toList();
     }
 
-    public List<Detalle> buscarPorBoleta(Integer id) {
-        return detalleRepository.buscarPorBoleta(id);
+    public DetalleDTO buscarPorId(Integer id) {
+        Detalle detalle = detalleRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Detalle no encontrado"
+                ));
+
+        return convertirDTO(detalle);
     }
 
-    public Detalle guardar(Detalle detalle) {
-        return detalleRepository.save(detalle);
-    }
-
-    public void eliminar(Integer id) {
-        buscarPorId(id);
-        detalleRepository.deleteById(id);
+    public List<DetalleDTO> buscarPorBoleta(Integer id) {
+        return detalleRepository.buscarPorBoleta(id)
+                .stream()
+                .map(this::convertirDTO)
+                .toList();
     }
 }

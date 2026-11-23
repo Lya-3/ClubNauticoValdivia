@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.clubnautico.clubnauticovaldivia.DTO.TipoUsuarioDTO;
 import com.clubnautico.clubnauticovaldivia.model.TipoUsuario;
 import com.clubnautico.clubnauticovaldivia.repository.TipoUsuarioRepository;
 
@@ -18,19 +19,50 @@ public class TipoUsuarioService {
         this.tipoUsuarioRepository = tipoUsuarioRepository;
     }
 
-    public List<TipoUsuario> listar() {
-        return tipoUsuarioRepository.findAll();
+    private TipoUsuarioDTO convertirDTO(TipoUsuario tipoUsuario) {
+        TipoUsuarioDTO dto = new TipoUsuarioDTO();
+
+        dto.setId(tipoUsuario.getId());
+        dto.setNombre(tipoUsuario.getNombre());
+
+        return dto;
     }
 
-    public TipoUsuario buscarPorId(Integer id) {
-        return tipoUsuarioRepository.findById(id)
-            .orElseThrow(() -> new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "Tipo de usuario no encontado"
-            ));
+    public List<TipoUsuarioDTO> listar() {
+        return tipoUsuarioRepository.findAll()
+                .stream()
+                .map(this::convertirDTO)
+                .toList();
     }
 
-    public TipoUsuario guardar(TipoUsuario tipoUsuario) {
-        return tipoUsuarioRepository.save(tipoUsuario);
+    public TipoUsuarioDTO buscarPorId(Integer id) {
+        TipoUsuario tipoUsuario = tipoUsuarioRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "El tipo de usuario que busca no ha sido encontrado"
+                ));
+
+        return convertirDTO(tipoUsuario);
+    }
+
+    public TipoUsuarioDTO guardar(TipoUsuarioDTO dto) {
+        TipoUsuario tipoUsuario = new TipoUsuario();
+
+        tipoUsuario.setNombre(dto.getNombre());
+
+        return convertirDTO(tipoUsuarioRepository.save(tipoUsuario));
+    }
+
+    public TipoUsuarioDTO actualizar(Integer id, TipoUsuarioDTO dto) {
+        TipoUsuario tipoUsuario = tipoUsuarioRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Tipo de usuario no encontrado"
+                ));
+
+        tipoUsuario.setNombre(dto.getNombre());
+
+        return convertirDTO(tipoUsuarioRepository.save(tipoUsuario));
     }
 
     public void eliminar(Integer id) {

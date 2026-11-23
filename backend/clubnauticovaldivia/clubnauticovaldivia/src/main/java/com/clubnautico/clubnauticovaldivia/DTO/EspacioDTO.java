@@ -11,4 +11,7 @@ public class EspacioDTO {
     private Integer precioSemanal;
     private Integer precioMensual;
     private Boolean disponible;
+
+    private Integer tipoEspacioId;
+    private String usuarioRut;
 }

@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import com.clubnautico.clubnauticovaldivia.DTO.UsuarioDTO;
 import com.clubnautico.clubnauticovaldivia.model.Usuario;
 import com.clubnautico.clubnauticovaldivia.repository.UsuarioRepository;
 
@@ -18,28 +19,53 @@ public class UsuarioService {
         this.usuarioRepository = usuarioRepository;
     }
 
-    public List<Usuario> listar() {
-        return usuarioRepository.findAll();
+    private UsuarioDTO convertirDTO(Usuario usuario) {
+        UsuarioDTO dto = new UsuarioDTO();
+
+        dto.setRut(usuario.getRut());
+        dto.setNombre(usuario.getNombre());
+        dto.setTelefono(usuario.getTelefono());
+        dto.setCorreo(usuario.getCorreo());
+
+        return dto;
     }
 
-    public Usuario buscarPorRut(String rut) {
-        return usuarioRepository.findById(rut)
-            .orElseThrow(() -> new ResponseStatusException(
-                HttpStatus.NOT_FOUND, "El usuario que buscas no ha sido encontrado"
-            ));
+    public List<UsuarioDTO> listar() {
+        return usuarioRepository.findAll()
+                .stream()
+                .map(this::convertirDTO)
+                .toList();
     }
 
-    public List<Usuario> buscarPorNombre(String nombre) {
-        return usuarioRepository.buscarPorNombre(nombre);
+    public UsuarioDTO buscarPorRut(String rut) {
+        Usuario usuario = usuarioRepository.findById(rut)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "El usuario no ha sido encontrado"
+                ));
+
+        return convertirDTO(usuario);
     }
 
-    public Usuario guardar(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    public List<UsuarioDTO> buscarPorNombre(String nombre) {
+        return usuarioRepository.buscarPorNombre(nombre)
+                .stream()
+                .map(this::convertirDTO)
+                .toList();
     }
 
-    public void eliminar(String rut) {
-        buscarPorRut(rut);
-        usuarioRepository.deleteById(rut);
+    public UsuarioDTO actualizar(String rut, UsuarioDTO dto) {
+        Usuario usuario = usuarioRepository.findById(rut)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "El usuario no ha sido encontrado"
+                ));
+
+        usuario.setNombre(dto.getNombre());
+        usuario.setTelefono(dto.getTelefono());
+        usuario.setCorreo(dto.getCorreo());
+
+        return convertirDTO(usuarioRepository.save(usuario));
     }
     
 }
