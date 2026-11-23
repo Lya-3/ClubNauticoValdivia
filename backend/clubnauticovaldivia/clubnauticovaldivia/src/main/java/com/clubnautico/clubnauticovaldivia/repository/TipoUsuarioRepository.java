@@ -8,4 +8,5 @@ import com.clubnautico.clubnauticovaldivia.model.TipoUsuario;
 @Repository 
 public interface TipoUsuarioRepository extends JpaRepository<TipoUsuario, Integer>   {
 
+
 }

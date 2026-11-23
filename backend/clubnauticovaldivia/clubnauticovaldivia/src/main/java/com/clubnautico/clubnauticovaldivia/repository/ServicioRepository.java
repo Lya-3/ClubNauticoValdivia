@@ -1,6 +1,10 @@
 package com.clubnautico.clubnauticovaldivia.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.clubnautico.clubnauticovaldivia.model.Servicio;
@@ -8,4 +12,6 @@ import com.clubnautico.clubnauticovaldivia.model.Servicio;
 @Repository 
 public interface ServicioRepository extends JpaRepository<Servicio, Integer>  {
 
+    @Query("SELECT s FROM Servicio s WHERE s.precio <= :precio")
+    List<Servicio> buscarPorPrecioMaximo(@Param("precio") Integer precio);
 }

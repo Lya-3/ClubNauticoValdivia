@@ -8,4 +8,6 @@ import com.clubnautico.clubnauticovaldivia.model.Rol;
 @Repository 
 public interface RolRepository extends JpaRepository<Rol, Integer>  {
 
+
+
 }
