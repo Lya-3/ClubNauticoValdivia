@@ -16,8 +16,11 @@ import java.util.List;
 import com.clubnautico.clubnauticovaldivia.DTO.DetalleDTO;
 import com.clubnautico.clubnauticovaldivia.service.DetalleService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController 
 @RequestMapping ("api/v1/detalles")
+@Tag(name = "Detalles", description = "Gestión de detalles de las boletas del club náutico")
 public class DetalleController {
 
     @Autowired 

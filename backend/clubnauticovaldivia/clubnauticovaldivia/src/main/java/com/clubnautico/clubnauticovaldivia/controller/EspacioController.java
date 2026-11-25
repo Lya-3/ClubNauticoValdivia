@@ -17,10 +17,13 @@ import java.util.List;
 import com.clubnautico.clubnauticovaldivia.DTO.EspacioDTO;
 import com.clubnautico.clubnauticovaldivia.service.EspacioService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
 @RequestMapping ("api/v1/espacios")
+@Tag(name = "Espacios", description = "Gestión de espacios (muelles / almacenes) del club náutico")
 public class EspacioController {
 
     @Autowired 

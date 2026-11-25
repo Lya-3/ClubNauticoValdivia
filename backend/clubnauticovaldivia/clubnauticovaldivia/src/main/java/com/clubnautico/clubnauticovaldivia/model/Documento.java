@@ -38,6 +38,9 @@ public class Documento {
     @Column(nullable = false)
     private String tipoArchivo;
 
+    @Column(nullable = false)
+    private String rutaArchivo;
+
     @NotNull
     @Column(nullable = false)
     private LocalDate fechaSubida;

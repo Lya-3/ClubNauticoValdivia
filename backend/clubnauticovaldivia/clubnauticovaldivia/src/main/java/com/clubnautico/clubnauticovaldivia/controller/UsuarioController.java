@@ -18,10 +18,13 @@ import java.util.List;
 import com.clubnautico.clubnauticovaldivia.DTO.UsuarioDTO;
 import com.clubnautico.clubnauticovaldivia.service.UsuarioService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController 
 @RequestMapping ("api/v1/usuarios")
+@Tag(name = "Usuarios", description = "Gestión de usuarios del club náutico")
 public class UsuarioController {
 
     @Autowired 

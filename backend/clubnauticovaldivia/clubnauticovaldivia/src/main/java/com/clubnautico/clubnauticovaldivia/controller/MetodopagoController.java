@@ -20,10 +20,13 @@ import org.springframework.web.bind.annotation.RestController;
 import com.clubnautico.clubnauticovaldivia.DTO.MetodopagoDTO;
 import com.clubnautico.clubnauticovaldivia.service.MetodopagoService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController 
 @RequestMapping ("api/v1/metodos_pago")
+@Tag(name = "Métodos de pago", description = "Gestión de métodos de pago del club náutico")
 public class MetodopagoController {
 
     @Autowired 

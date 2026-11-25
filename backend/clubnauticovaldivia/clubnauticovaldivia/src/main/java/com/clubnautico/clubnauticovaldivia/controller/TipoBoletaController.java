@@ -19,10 +19,13 @@ import java.util.List;
 import com.clubnautico.clubnauticovaldivia.DTO.TipoboletaDTO;
 import com.clubnautico.clubnauticovaldivia.service.TipoBoletaService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController 
 @RequestMapping ("api/v1/tiposdeboleta")
+@Tag(name = "Tipos de boleta", description = "Gestión de tipos de boleta del club náutico")
 public class TipoBoletaController {
 
     @Autowired 

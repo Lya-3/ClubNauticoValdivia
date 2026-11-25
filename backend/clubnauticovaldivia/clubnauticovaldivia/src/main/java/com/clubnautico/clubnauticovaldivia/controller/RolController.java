@@ -19,10 +19,13 @@ import java.util.List;
 import com.clubnautico.clubnauticovaldivia.DTO.RolDTO;
 import com.clubnautico.clubnauticovaldivia.service.RolService;
 
-import io.swagger.v3.oas.annotations.parameters.RequestBody;
+import io.swagger.v3.oas.annotations.tags.Tag;
+
+import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController 
 @RequestMapping ("api/v1/roles")
+@Tag(name = "Roles", description = "Gestión de roles del club náutico")
 public class RolController {
 
     @Autowired 

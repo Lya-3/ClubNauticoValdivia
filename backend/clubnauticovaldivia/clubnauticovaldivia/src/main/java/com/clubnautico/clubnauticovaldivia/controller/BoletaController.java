@@ -17,8 +17,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.clubnautico.clubnauticovaldivia.DTO.BoletaDTO;
 import com.clubnautico.clubnauticovaldivia.service.BoletaService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping ("api/v1/boletas")
+@Tag(name = "Boletas", description = "Gestión de boletas del club náutico")
 public class BoletaController {
 
     @Autowired 
