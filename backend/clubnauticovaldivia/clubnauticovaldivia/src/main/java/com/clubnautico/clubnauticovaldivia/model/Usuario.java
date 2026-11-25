@@ -51,21 +51,30 @@ public class Usuario {
 
     //Relaciones
 
+    //Muchos usuarios pueden tener un rol
     @ManyToOne
     @JoinColumn(name = "rol_id")
     private Rol rol;
 
+    //Muchos usuarios pueden tener un tipo de usuario
     @ManyToOne
     @JoinColumn(name = "tipo_usuario_id")
     private TipoUsuario tipoUsuario;
 
+    //Un usuario puede tener muchos espacios
     @JsonIgnore
     @ToString.Exclude
     @OneToMany(mappedBy = "usuario")
     private List<Espacio> espacios;
 
+    //Un usuario puede tener muchas boletas
     @JsonIgnore
     @ToString.Exclude
     @OneToMany(mappedBy = "usuario")
     private List<Boleta> boletas;
+
+    //Un usuario puede tener muchos documentos
+    @OneToMany(mappedBy = "usuario")
+    @ToString.Exclude
+    private List<Documento> documentos;
 }

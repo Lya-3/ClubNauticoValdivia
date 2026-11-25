@@ -1,5 +1,7 @@
 package com.clubnautico.clubnauticovaldivia.model;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +16,7 @@ import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 @Data 
 @AllArgsConstructor 
@@ -27,13 +30,22 @@ public class Documento {
     private Integer id;
 
     @NotBlank(message = "El nombre no puede estar vacío")
-    @Size(min = 2, max = 30, message = "El nombre debe contener entre 2 y 30 caracteres")
-    @Column(unique = true, length = 50, nullable = false)
+    @Size(max = 255)
+    @Column(length = 255, nullable = false)
     private String nombre;
 
-    //Relaciones
-    @NotNull(message = "El usuario es obligatorio")
+    @NotBlank
+    @Column(nullable = false)
+    private String tipoArchivo;
+
+    @NotNull
+    @Column(nullable = false)
+    private LocalDate fechaSubida;
+
+    //Muchos documentos puede tener un usuario
+    @NotNull
     @ManyToOne
     @JoinColumn(name = "usuario_rut", nullable = false)
+    @ToString.Exclude
     private Usuario usuario;
 }
