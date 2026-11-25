@@ -1,16 +1,94 @@
-.debajo_carrito {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
+.compras {
+  min-height: 75vh;
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.debajo_carrito_vacio {
-    text-align: center;
-    margin-top: 50px;
+.compras > div:first-child {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+}
+
+.debajo_carrito {
+  margin-top: 1.75rem;
+  padding: 1.25rem 1.5rem;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.debajo_carrito h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #0f172a;
 }
 
 .vaciar_carrito {
-    padding: 10px 15px;
+  padding: 0.7rem 1.35rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1.5px solid #fecaca;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.vaciar_carrito:hover {
+  background-color: #dc2626;
+  color: #ffffff;
+  border-color: #dc2626;
+}
+
+.debajo_carrito_vacio {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  text-align: center;
+  margin-top: 2rem;
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.08);
+  max-width: 480px;
+  width: 100%;
+}
+
+.debajo_carrito_vacio h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.5rem;
+}
+
+.debajo_carrito_vacio p {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 1.75rem;
+}
+
+.debajo_carrito_vacio button {
+  padding: 0.75rem 1.65rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #ffffff;
+  background: linear-gradient(135deg, #0284c7, #0369a1);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
+  transition: all 0.2s ease;
+}
+
+.debajo_carrito_vacio button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(180, 181, 181, 0.84);
 }

@@ -6,7 +6,7 @@ function Arriendos() {
         {
             id: 'muelle',
             tipo: 'espacio',
-            img: '/imagenes/marina.webp',
+            img: '/imagenes/muelle-4.webp',
             title: 'Muelles',
             tamanos: [
                 {id: 'muelle_8', text: "8 M | 26 FT"},
@@ -23,9 +23,10 @@ function Arriendos() {
             description: 'Estaciona tu embarcacion y accede a las maravillas que ofrece Valdivia'
         },
         {
+           
             id: 'almacen',
             tipo: 'espacio',
-            img: '/imagenes/houl.webp',
+            img: '/imagenes/almacen-4.jpg',
             title: 'Almacenes',
             tamanos: [
                 {id: 'almacen_8', text: "8 M | 26 FT"},
@@ -45,7 +46,7 @@ function Arriendos() {
         {
             id: 'estacionamiento',
             tipo: 'servicio',
-            img: '/imagenes/estacionamientos.jpg',
+            img: '/imagenes/Parking-Club-Náutico-Lo-Pagán-1024x569.jpg',
             title: 'Estacionamiento',
             cost_text: "Introduzca el numero de dias: ",
             amount_type: "Por dia",
@@ -54,7 +55,7 @@ function Arriendos() {
         {
             id: 'pistola_agua',
             tipo: 'servicio',
-            img: '/imagenes/pistola_de_agua.webp',
+            img: '/imagenes/pistola.webp',
             title: 'Pistola de Agua',
             cost_text: "Introduzca el numero de horas: ",
             amount_type: "Por hora",

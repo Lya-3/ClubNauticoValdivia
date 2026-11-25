@@ -28,7 +28,7 @@ export default function MuelleOrganism() {
             semanal: '$119.000',
             mensual: '$510.000',
             electricidad: true,
-            imagen: '/imagenes/muelle 2.webp',
+            imagen: '/imagenes/muelle-2.webp',
             descripcion: 'Incluye torre de conexión eléctrica de 220V integrada y acceso a toma de agua.',
         },
         {
@@ -39,7 +39,7 @@ export default function MuelleOrganism() {
             semanal: '$172.000',
             mensual: '$739.500',
             electricidad: true,
-            imagen: '/imagenes/muelle 3.jpg',
+            imagen: '/imagenes/muelle-3.jpg',
             descripcion: 'Espacio de fácil maniobrabilidad con dimensiones ampliadas para yates y veleros de eslora media.'
         },
         {
@@ -50,7 +50,7 @@ export default function MuelleOrganism() {
             semanal: '$172.000',
             mensual: '$1.020.000',
             electricidad: true,
-            imagen: '/imagenes/muelle 4.webp',
+            imagen: '/imagenes/muelle-4.webp',
             descripcion: 'Ubicación privilegiada con máxima capacidad de manga y sistemas de amarra reforzados.'
         },
         {
@@ -61,7 +61,7 @@ export default function MuelleOrganism() {
             semanal: '$260.000',
             mensual: '$1.147.500',
             electricidad: true,
-            imagen: '/imagenes/muelle 5.jpg',
+            imagen: '/imagenes/muelle-5.jpg',
             descripcion: 'Diseñado especialmente para catamaranes y grandes embarcaciones turísticas.'
         }
     ];

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Container, Row, Col, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter } from 'react-bootstrap'
-import Text from '../atoms/Text'
+import { Container, Row, Col, Modal, ModalHeader, ModalTitle, ModalBody, ModalFooter } from 'react-bootstrap';
+import Text from '../atoms/Text';
 import Button from '../atoms/Button';
 import Image from '../atoms/Image';
 import '../../styles/organisms/AlmacenamientoOrganism.css';
@@ -18,19 +18,19 @@ export default function AlmacenamientoOrganism() {
             mensual: '$85.000',
             techado: true,
             seguridad: true,
-            imagen: '/imagenes/Almacen.1.jpg',
+            imagen: '/imagenes/almacen-1.jpg',
             descripcion: 'Espacio bajo techo perfecto para embarcaciones pequeñas, motos de agua o equipos náuticos de menor tamaño.',
         },
         {
             id: 'S5-S10',
-            nombre: 'Almacén Mediana (S5 - S10)',
+            nombre: 'Almacén Mediano (S5 - S10)',
             medidas: '12 m x 5 m',
             diario: '$7.500',
             semanal: '$35.000',
             mensual: '$115.000',
             techado: true,
             seguridad: true,
-            imagen: '/imagenes/Almacen.2.jpg',
+            imagen: '/imagenes/almacen-2.jpg',
             descripcion: 'Bodega de almacenamiento estándar para lanchas motoras y embarcaciones recreativas de tamaño medio.',
         },
         {
@@ -42,7 +42,7 @@ export default function AlmacenamientoOrganism() {
             mensual: '$135.000',
             techado: true,
             seguridad: true,
-            imagen: '/imagenes/Almacen.3.jpg',
+            imagen: '/imagenes/almacen-3.jpg',
             descripcion: 'Excelente capacidad de maniobra y resguardo seguro contra las condiciones climáticas.',
         },
         {
@@ -54,7 +54,7 @@ export default function AlmacenamientoOrganism() {
             mensual: '$147.000',
             techado: true,
             seguridad: true,
-            imagen: '/imagenes/Almacen.4.jpg',
+            imagen: '/imagenes/almacen-4.jpg',
             descripcion: 'Diseñado para yates medianos o embarcaciones que requieran espacio adicional de bodega.',
         },
         {
@@ -66,10 +66,9 @@ export default function AlmacenamientoOrganism() {
             mensual: '$180.000',
             techado: true,
             seguridad: true,
-            imagen: '/imagenes/Almacen.5.jpg',
-            descripcion: 'Espacio bajo techo perfecto para embarcaciones pequeñas, motos de agua o equipos náuticos de menor tamaño.',
+            imagen: '/imagenes/almacen-5.jpg',
+            descripcion: 'Bodega de máxima capacidad y altura, ideal para embarcaciones de gran envergadura y resguardo integral.'
         }
-
     ];
 
     return (
@@ -82,13 +81,13 @@ export default function AlmacenamientoOrganism() {
                 </p>
             </div>
 
-            {/* Grid de Tarjestas de Almacenes*/}
+            {/* Grid de Tarjetas de Almacenes */}
             <Row className="g-4">
                 {datosAlmacen.map((item) => (
                     <Col key={item.id} xs={12} md={6} lg={4}>
                         <div className="tarjeta-almacen">
                             <div style={{ overflow: "hidden" }}>
-                                <Image src={item.imagen} alt={item.nombre} className={"tarjeta-almacen-img"} />
+                                <Image src={item.imagen} alt={item.nombre} className="tarjeta-almacen-img" />
                             </div>
                             <div className="tarjeta-almacen-body">
                                 <Text variant="h3">{item.nombre}</Text>
@@ -103,7 +102,7 @@ export default function AlmacenamientoOrganism() {
                 ))}
             </Row>
 
-            {/* Modal Detalle*/}
+            {/* Modal Detalle */}
             {almacenSeleccionado && (
                 <Modal
                     show={!!almacenSeleccionado}
@@ -121,7 +120,7 @@ export default function AlmacenamientoOrganism() {
                                     <Image
                                         src={almacenSeleccionado.imagen}
                                         alt={almacenSeleccionado.nombre}
-                                        className={"img-fluid rounded"}
+                                        className="img-fluid rounded"
                                     />
                                 </div>
                             </Col>
@@ -156,7 +155,6 @@ export default function AlmacenamientoOrganism() {
                     </ModalFooter>
                 </Modal>
             )}
-
         </Container>
-    )
+    );
 }

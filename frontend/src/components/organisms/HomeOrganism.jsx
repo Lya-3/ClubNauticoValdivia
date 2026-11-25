@@ -3,14 +3,14 @@ import { Container, Row, Col, Carousel, Card } from "react-bootstrap";
 import Image from "../atoms/Image";
 import Button from "../atoms/Button";
 import { useNavigate } from "react-router-dom";
-import "../../styles/organisms/HomeOrganism.css"
+import "../../styles/organisms/HomeOrganism.css";
 
 export default function HomeOrganism() {
     const navigate = useNavigate();
 
     return (
         <div className="home-container">
-            {/* Carrusel Principal*/}
+            {/* Carrusel Principal */}
             <section className="carrusel-hero-section">
                 <Carousel fade interval={4000} controls={true} indicators={true}>
                     <Carousel.Item>
@@ -43,7 +43,7 @@ export default function HomeOrganism() {
 
                     <Carousel.Item>
                         <div className="carrusel-img-overlay">
-                            <Image src="/imagenes/principal 2.jpg" alt="Marina Club Náutico Valdivia" className="d-block w-100 carrusel-img" />
+                            <Image src="/imagenes/principal-2.jpg" alt="Marina Club Náutico Valdivia" className="d-block w-100 carrusel-img" />
                         </div>
                         <Carousel.Caption className="carrusel-caption-custom">
                             <h1>Comunidad Náutica</h1>
@@ -57,7 +57,7 @@ export default function HomeOrganism() {
                 </Carousel>
             </section>
 
-            {/* Sección Conócenos*/}
+            {/* Sección Conócenos */}
             <section className="seccion-conocenos py-5">
                 <Container>
                     <Row className="align-items-center g-5">
@@ -86,7 +86,7 @@ export default function HomeOrganism() {
                     <Row className="align-items-center g-5 flex-lg-row-reverse">
                         <Col lg={6}>
                             <div className="img-wrapper rounded-4 overflow-hidden shadow-lg">
-                                <Image src="/imagenes/historiaaaa.webp" alt="Historia Club Náutico" className="img-fluid" />
+                                <Image src="/imagenes/historia-club.webp" alt="Historia Club Náutico" className="img-fluid" />
                             </div>
                         </Col>
                         <Col lg={6}>
@@ -103,7 +103,7 @@ export default function HomeOrganism() {
                 </Container>
             </section>
 
-            {/* Sección ¿Por qué Elegirnos?*/}
+            {/* Sección ¿Por qué Elegirnos? */}
             <section className="seccion-elegirnos py-5">
                 <Container>
                     <div className="text-center mb-5">
